@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+</head>
+<body>
+    <div class="container">
+        <div class="get-recipe">
+            <div class="dashboard-heading">
+                <h1>Welcome {{user_to_display.first_name}}!</h1>
+                <div class="dashboard-heading-links">
+                  <a href="/recipes/new">Create</a>
+                  <a href="/logout">Logout</a>
+                </div>
+            </div>
+            <h1>{{recipe_to_display.name}}</h1>
+            <div class="recipe">
+                <p>Description:         {{recipe_to_display.description}}</p>
+                <p>Under 30 Minutes:    {{recipe_to_display.under_thirty_minutes}}</p>
+                <p>Instructions:        {{recipe_to_display.instructions}}</p>
+                <p>Date Made:           {{recipe_to_display.date_made_on.strftime("%B %dth, %Y")}}</p>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='/js/scripts.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+/* Resets */
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #eab4b0;
+}
+
+.container{
+    width: 1000px;
+    display: flex;
+    margin: 50px auto;
+    justify-content: space-around;
+}
+
+h1{
+    font-size: 200%;
+    margin-bottom: 30px;
+}
+
+form{
+    background-color: #333333;
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    margin: 0px auto;
+    padding: 20px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+#create-form{
+    width: inherit;
+    padding: 50px 200px;
+}
+
+.login-form-in,.register-form-in{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.login-form h1{
+    color:#42BE9B;
+    font-size: 200%;
+    margin-bottom: 30px;
+}
+
+.register-form h1{
+    color:#3832B9;
+    font-size: 200%;
+    margin-bottom: 30px;
+}
+
+input{
+    padding: 7px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+button{
+    position: relative;
+    left: 0px;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+
+.register-button{
+    padding: 7px;
+    width: 80px;
+    background-color:#3832B9 ;
+    border: 0px;
+}
+
+.login-button,.create-button{
+    padding: 7px;
+    width: 60px;
+    background-color:#42BE9B ;
+    border: 0px;
+}
+
+.errors{
+    background-color:#f3d4e1 ;
+    border-radius:5px;
+    padding: 10px;
+}
+
+.log-out-button{
+    padding: 7px;
+    width: 60px;
+    background-color:#42BE9B ;
+    border: 0px;
+    position: relative;
+    top: 60px;
+    left: -500px;
+}
+
+.dashboard-content{
+    display: flex;
+    flex-direction: column;
+    width: inherit;
+}
+
+.dashboard-heading{
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashboard-heading-links{
+    position: relative;
+    top: 20px;
+}
+
+.dashboard-heading-links a{
+    margin-right: 30px;
+    color: #000000;
+}
+
+table a{
+    color: #000000;
+}
+
+.get-recipe{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}
+
+.recipe{
+    width: inherit;
+    border: 3px solid #FF524E;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.create-recipe
+{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+}

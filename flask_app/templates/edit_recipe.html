@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipes</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='/css/style.css')}}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="create-recipe">
+        <div class="dashboard-heading">
+        <h1>Edit Recipe</h1>
+          <div class="dashboard-heading-links">
+            <a href="/dashboard">Dashboard</a>
+            <a href="/logout">Logout</a>
+          </div>
+        </div>
+        <form action="/edit_recipe" method="POST" id="create-form">
+            <div class="left-content">
+                <div>
+                    {% with messages = get_flashed_messages(category_filter=["recipe-error"]) %}    
+                    {% if messages %}                            
+                        {% for message in messages %}            
+                            <p>{{message}}</p> 
+                        {% endfor %}
+                    {% endif %}
+                    {% endwith %}
+                </div>
+                <div>
+                    <label for="name">Name:</label><br>
+                    <input type="text" name="name" value = "{{recipe_to_display.name}}">
+                </div>
+                <div>
+                    <label for="description">Description:</label><br>
+                    <input type="textarea" name="description" value = "{{recipe_to_display.description}}">
+                </div>
+                <div>
+                    <label for="instructions">Instructions:</label><br>
+                    <input type="textarea" name="instructions" value = "{{recipe_to_display.instructions}}" >
+                </div>
+            </div>
+            <div class="right-content">
+                <div>
+                    <label for="date_made_on">Date Made on:</label><br/>
+                    <input type="date" name="date_made_on" value = "{{recipe_to_display.date_made_on}}" placeholder="date_made_on" id="date_made_on">
+                </div>
+                  <div>
+                    <p>Under 30 Minutes?</p>
+                    <input type="radio" name="under_thirty_minutes" value="Yes" />
+                    <label for="under_thirty_minutes">Yes</label>
+                    <input type="radio" name="under_thirty_minutes" value="No" />
+                    <label for="under_thirty_minutes">No</label>
+                  </div>
+                  <div>
+                    <input type="hidden" name="recipe_id" value="{{recipe_to_display.id}}">
+                  </div>
+                  <button type="submit" class="create-button">Update</button>
+            </div>
+        </form>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='/js/scripts.js') }}"
+    ></script>
+  </body>
+</html>
